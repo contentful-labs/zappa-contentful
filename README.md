@@ -15,13 +15,13 @@ To use this project you have to have a Contentful and AWS account. If you don't 
 ### Get the source code and install dependencies.
 
 ```
-$ git clone git@github.com:Shy/zappa-contentful.git
+$ git clone git@github.com:contentful-labs/zappa-contentful.git
 $ cd zappa-contentful
 $ virtualenv env
 $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
-You can use `python app.py` to run the application locally. 
+You can use `python app.py` to run the application locally.
 
 #### Set up the content model and update the API Keys.
 
@@ -46,7 +46,7 @@ contentful-import \
 
 Make sure to update the command with your spaceID and mangementToken. You're able to find both of those keys via app.contentful.com -> Space Settings -> API keys.
 
-Once that's taken care of update your [app.py](https://github.com/Shy/zappa-contentful/blob/master/app.py#L5-L6) file with your new SPACE_ID and DELIVERY_API_KEY.
+Once that's taken care of update your [app.py](https://github.com/contentful-labs/zappa-contentful/blob/master/app.py#L5-L6) file with your new SPACE_ID and DELIVERY_API_KEY.
 
 #### Running Locally and deploying to AWS Lambda
 
@@ -56,9 +56,9 @@ To run the project locally, you can use `python app.py`.
 
 To deploy to the cloud you can either use the existing Zappa configuration file or let Zappa automatically configure your deployment settings with `zappa init`.
 
-If you use the configuration file in this repo you can deploy both a dev and production environment. For your dev environment use `zappa deploy dev` and for production `zappa deploy production`. The zappa deploy command will return a URL where you can access your website. 
+If you use the configuration file in this repo you can deploy both a dev and production environment. For your dev environment use `zappa deploy dev` and for production `zappa deploy production`. The zappa deploy command will return a URL where you can access your website.
 
-Once you've deployed your dev and production environment if you make a code change you can use `zappa update dev` or `zappa update production` to push your code change to lambda without resulting in a chance to the URL that your function is deployed on. 
+Once you've deployed your dev and production environment if you make a code change you can use `zappa update dev` or `zappa update production` to push your code change to lambda without resulting in a chance to the URL that your function is deployed on.
 
 If you head over to API Gateway, you'll see a new API containing your function.
 
