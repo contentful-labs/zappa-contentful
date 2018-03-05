@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+  <section class="hero">
+
+        <div class="container">
+           <div class="columns">
+              <div class="column">
+                 <h1 class="title has-text-centered">
+                    {{title}}
+                 </h1>
+                 <p class="summary">{{intro_string | markdown}}</p>
+              </div>
+
+        </div>
+     </div>
+     <div class="container">
+        {% for show in shows %}
+        <div class="columns">
+           <div class="column">
+              <h4 class="title is-4">
+                <a href="{{url_for('show',entry_id=show.slug)}}">{{ show.title }}</a>
+              </h4>
+              <h6 class="subtitle is-6">
+                <strong>Original release:</strong> {{ show.first_episode_date | datetime }}  - {{ show.last_episode_date | datetime}}
+              </h6>
+              <video controls>
+                <source src="https:{{ show.henshin[0].url() }}" type="video/webm" alt="{{show.title}}">
+                Your browser does not support video.
+              </video>
+           </div>
+        </div>
+        {% endfor %}
+     </div>
+  </section>
+{% endblock %}

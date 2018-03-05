@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Henshin! {{title}}{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+  <section class="hero">
+      <div class="container">
+          <div class="columns">
+              <div class="column ">
+                  <h1 class="title has-text-centered">
+                      {{show.title}}
+                  </h1>
+              </div>
+          </div>
+          <div class="columns">
+              {% for henshin in show.henshin %}
+              <div class="column">
+                  <video controls>
+                      <source src="https:{{ henshin.url() }}" type="video/webm" alt="{{show.title}}">
+                      Your browser does not support video.
+                  </video>
+              </div>
+              {% endfor %}
+          </div>
+          <div class="columns">
+              <div class="column">
+                  <p>{{show.summary | markdown}}</p>
+              </div>
+          </div>
+          {% if show.characters %}
+          <div class="columns">
+              <div class="column">
+                  <h2 class="title has-text-centered">
+                      Characters
+                  </h2>
+              </div>
+          </div>
+          {% for character in show.characters %}
+          {% if loop.index % 3 == 1 %}
+          <div class="columns">
+              {% endif %}
+              <div class="column is-one-third">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-3by3">
+                              <img src="https:{{ character.transformed_photo.url(w=300, h=300, fm='jpg', q=100, fit='fill') }}" alt="character.full_name">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <div class="media">
+                              <div class="media-left">
+                                  <figure class="image is-48x48">
+                                      <img src="https:{{ character.untransformed_photo.url(w=96, h=96, fm='jpg', q=100, fit='fill') }}" alt="Placeholder image">
+                                  </figure>
+                              </div>
+                              <div class="media-content">
+                                  <p class="title is-5">{{character.job_title}}</p>
+                                  <p class="subtitle is-7">{{character.full_name}}</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% if loop.index % 3 == 0 %}
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+      </div>
+      </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+<p>Information Sourced from: <a href="{{show.reference}}">Tv Tropes</a></p>
+{% endblock %}

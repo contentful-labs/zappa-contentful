@@ -1,0 +1,45 @@
+video {
+    width:100%;
+}
+
+p, .summary p {
+    margin: 16px 0px 16px 0px;
+}
+
+.summary ol{
+    margin-left: 16px;
+    padding-left: 16px;
+}
+.summary li {
+    margin: 16px 0px 16px 0px;
+}
+
+@media screen and (min-width: 1216px) {
+  .container {
+    max-width: 960px;
+}
+
+@media screen and (min-width: 1408px) {
+  .container {
+        max-width: 960px;
+  }
+}
+
+.footer {
+    padding: 1rem 1rem 1rem;
+    margin-top: 3rem;
+}
+
+
+@media screen and (min-width: 1216px) {
+  nav {
+    max-width: 960px;
+    margin: auto;
+}
+
+@media screen and (min-width: 1408px) {
+  nav {
+        max-width: 960px;
+        margin: auto;
+  }
+}

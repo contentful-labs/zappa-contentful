@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+        {% block head %}
+        {% endblock %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36164310-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-36164310-3');
+        </script>
+    </head>
+    <body>
+        <nav class="navbar is-transparent">
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="{{url_for('index')}}">
+                    Home
+                    </a>
+                    <a class="navbar-item" href="{{url_for('filter',filter_string='SuperSentai')}}">
+                    Super Sentai
+                    </a>
+                    <a class="navbar-item" href="{{url_for('filter',filter_string='KamenRider')}}">
+                    Kamen Rider
+                    </a>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                {% block footer %}
+                {% endblock %}
+                <a href="https://www.contentful.com/" rel="nofollow" target=“_blank”><img src="https://images.contentful.com/fo9twyrwpveg/44baP9Gtm8qE2Umm8CQwQk/c43325463d1cb5db2ef97fca0788ea55/PoweredByContentful_LightBackground.svg" style="max-width:100px;width:100%;" alt="Powered by Contentful" /></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
