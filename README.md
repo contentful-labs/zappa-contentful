@@ -12,6 +12,8 @@ To use this project you have to have a Contentful and AWS account. If you don't 
 
 ## Getting started
 
+*Before you begin, make sure you are running Python 3.6.* 
+
 ### Get the source code and install dependencies.
 
 ```
