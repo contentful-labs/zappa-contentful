@@ -27,8 +27,13 @@
                 <strong>Original release:</strong> {{ show.first_episode_date | datetime }}  - {{ show.last_episode_date | datetime}}
               </h6>
               <video controls>
-                <source src="https:{{ show.henshin[0].url() }}" type="video/webm" alt="{{show.title}}">
-                Your browser does not support video.
+                  {% for henshin in show.henshin if henshin.file.contentType == 'video/webm' %}
+                    <source src="https:{{ henshin.url() }}" type="video/webm" alt="{{show.title}}">
+                  {% endfor %}
+                  {% for henshin in show.henshin if henshin.file.contentType == 'video/mp4' %}
+                    <source src="https:{{ henshin.url() }}" type="video/mp4" alt="{{show.title}}">
+                  {% endfor %}
+                  Your browser does not support video.
               </video>
            </div>
         </div>
