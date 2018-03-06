@@ -1,11 +1,13 @@
 {
     "dev": {
         "s3_bucket": "zappa-contentful",
-        "app_function": "app.app"
+        "app_function": "app.app",
+        "memory_size": 128,
     },
     "production": {
         "s3_bucket": "zappa-contentful",
-        "app_function": "app.app"
+        "app_function": "app.app",
+        "memory_size": 128
     }
 }
 
