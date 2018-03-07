@@ -2,17 +2,13 @@
 
 Example application showing how to build an entirely serverless site with Python, Flask and Contentful. Then seamlessly deploy it to AWS Lambda/API Gateway using [Zappa](https://github.com/Miserlou/Zappa). A live version of this site lives at [henshin.ruparel.co](https://henshin.ruparel.co/).
 
-## Contribution
-
-This project is part of [contentful-userland](https://github.com/contentful-userland) which means that we’re always open to contributions and pull requests. You can learn more about how contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
-
 ## Requirements
 
 To use this project you have to have a Contentful and AWS account. If you don't have a Contentful account yet, you can register at [www.contentful.com/sign-up](https://www.contentful.com/sign-up/).
 
 ## Getting started
 
-*Before you begin, make sure you are running Python 3.6.* 
+*Before you begin, make sure you are running Python 3.6.*
 
 ### Get the source code and install dependencies.
 
