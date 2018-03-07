@@ -15,13 +15,9 @@
           <div class="columns">
               <div class="column">
                 <video controls>
-                    {% for henshin in show.henshin if henshin.file.contentType == 'video/webm' %}
-                      <source src="https:{{ henshin.url() }}" type="video/webm" alt="{{show.title}}">
-                    {% endfor %}
-                    {% for henshin in show.henshin if henshin.file.contentType == 'video/mp4' %}
-                      <source src="https:{{ henshin.url() }}" type="video/mp4" alt="{{show.title}}">
-                    {% endfor %}
-                    Your browser does not support video.
+                  <source src="https:{{ show.henshin_webm.url() }}" type="video/webm" alt="{{show.title}}">
+                  <source src="https:{{ show.henshin_mp4.url() }}" type="video/mp4" alt="{{show.title}}">
+                  Your browser does not support video.
                 </video>
               </div>
           </div>
